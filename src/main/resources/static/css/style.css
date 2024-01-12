@@ -4,16 +4,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Garante que a altura da tela seja pelo menos 100% da viewport height */
+    min-height: 100vh;
     margin: 0;
-    overflow-y: auto; /* Adicionado para permitir rolar verticalmente */
+    overflow-y: auto;
 }
 
 .container {
     text-align: center;
     max-width: 600px;
     width: 100%;
-    padding: 20px; /* Adicionado espaçamento interno para o conteúdo */
+    padding: 20px;
 }
 
 h1 {
