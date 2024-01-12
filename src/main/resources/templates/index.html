@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Anime</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+    <h1>Buscar Anime</h1>
+
+    <form method="post" action="/api/anime" id="animeForm">
+        <label for="animeId">ID do Anime:</label>
+        <input type="text" id="animeId" name="animeId" required>
+        <button type="submit" onclick="hideForm()">Buscar</button>
+    </form>
+
+    <div class="info-anime" th:if="${not #strings.isEmpty(animeSlug) and not #strings.isEmpty(animeSynopsis)}">
+        <img th:src="${posterImageSmall}" alt="Poster Image">
+        <p><strong>Slug:</strong> <span th:text="${animeSlug}"></span></p>
+        <p><strong>Popularity rank:</strong> <span th:text="${popularityRank}"></span></p>
+        <p><strong>Sinopse:</strong> <span th:text="${animeSynopsis}"></span></p>
+    </div>
+    <script>
+        function hideForm() {
+            var form = document.getElementById('animeForm');
+            form.style.display = 'none';
+        }
+
+        // Adiciona a classe 'loaded' à div de informações após um pequeno atraso para permitir a animação do formulário
+        setTimeout(function() {
+            document.querySelector('.info-anime').classList.add('loaded');
+        }, 500);
+    </script>
+</div>
+</body>
+</html>

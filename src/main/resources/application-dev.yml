@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/anime_platform
+    hikari:
+      username: postgres
+      password: 123
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  jooq:
+    sql-dialect: org.hibernate.dialect.PostgreSQLDialect
